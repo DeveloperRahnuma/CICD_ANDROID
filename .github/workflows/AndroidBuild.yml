@@ -1,11 +1,11 @@
-name : AndroidBuild
-on :
-  pull_request :
+name: AndroidBuild
+on:
+  pull_request:
       branches : [ master ]
-  push :
+  push:
       branches : [ master ]
 
-job :
+job:
   build:
     runs-on : ubuntu-latest
     steps:
@@ -15,8 +15,8 @@ job :
       - name: Setup Java Jdk
         uses: actions/setup-java@v3.13.0
         with:
-           java-version: '18'
-           distribution: 'adopt'
+          java-version: '18'
+          distribution: 'adopt'
 
       - name: Build With Gradle
         run: _/gradlew build
